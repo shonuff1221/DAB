@@ -1377,7 +1377,9 @@ abstract contract ReentrancyGuard {
     }
 }
 
-
+abstract contract DABToken is ERC20 {
+    function mint(address _to, uint256 _amount) public virtual;
+}
 
 // For interacting with our own strategy
 interface IStrategy {
@@ -1437,7 +1439,6 @@ contract DABFarm is Ownable, ReentrancyGuard {
         address strat; // Strategy address that will auto compound want tokens
     }
 
-    
     address public DAB = 0x1dd3f989d9FD178388Ef1D67e5E84B92B517125E;
 
     address public burnAddress = 0x000000000000000000000000000000000000dEaD;
@@ -1587,10 +1588,7 @@ contract DABFarm is Ownable, ReentrancyGuard {
                 totalAllocPoint
             );
 
-        DABToken(DAB).mint(
-            owner(),
-            DABReward.mul(ownerDABReward).div(1000)
-        );
+        DABToken(DAB).mint(owner(), DABReward.mul(ownerDABReward).div(1000));
         DABToken(DAB).mint(address(this), DABReward);
 
         pool.accDABPerShare = pool.accDABPerShare.add(
@@ -1646,9 +1644,7 @@ contract DABFarm is Ownable, ReentrancyGuard {
 
         // Withdraw pending DAB
         uint256 pending =
-            user.shares.mul(pool.accDABPerShare).div(1e12).sub(
-                user.rewardDebt
-            );
+            user.shares.mul(pool.accDABPerShare).div(1e12).sub(user.rewardDebt);
         if (pending > 0) {
             safeDABTransfer(msg.sender, pending);
         }
@@ -1716,10 +1712,5 @@ contract DABFarm is Ownable, ReentrancyGuard {
     {
         require(_token != DAB, "!safe");
         IERC20(_token).safeTransfer(msg.sender, _amount);
-    }
-
-    
-
-        DABToken(DAB).mint(msg.sender, _inputAmt);
     }
 }
