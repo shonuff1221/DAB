@@ -5,7 +5,7 @@ import BotNavBar from './BotNavBar'
 
 import Vaults from './Vaults'
 import Vaults2 from './Vaults2'
-import MigrateAUTOv2 from './MigrateAUTOv2'
+
 
 import Swap from './Swap'
 import { ToastContainer, toast, Slide } from 'react-toastify';
@@ -101,18 +101,7 @@ class App extends React.Component {
         </div>
       }
 
-      else if (page == "migrate"){
-        return   <MigrateAUTOv2
-        notify={this.notify}
-        page = {page}
-        connectionOK={this.props.connectionOK}
-        connected={this.props.connected}
-        chainId={this.props.chainId}
-        address={this.props.address}
-        web3={this.props.web3}
-        web3_np={this.props.web3_np}
-      />
-      }
+      
  
 
    
@@ -172,7 +161,7 @@ class App extends React.Component {
 
         {page == "v2_vaults" ?
           <div style={{height: 0, paddingTop:"2px", fontSize:"13px", color:"grey"}}  > 
-            <span style={{cursor:"pointer"}} onClick={()=>{this.setState({page: "v1_vaults"})}} ><u>Autofarm V1</u></span>
+            <span style={{cursor:"pointer"}} onClick={()=>{this.setState({page: "v1_vaults"})}} ><u>DABfarm V1</u></span>
           </div>
           :
           ""
@@ -197,21 +186,21 @@ class App extends React.Component {
         
     let text_migrate_to_v2 =       <div style={{paddingTop:"8px"}}>
       <div style={{height: 0, fontSize:"14px", color:"grey"}}  > 
-        <span>Autofarm has upgraded to V2!</span> 
+        <span>DABfarm has upgraded to V2!</span> 
       </div> 
 
       <div style={{paddingTop:"20px", fontSize:"13px", color:"grey"}}  > 
-      <span style={{cursor:"pointer"}} onClick={()=>{this.setState({page: "v2_vaults"})}} ><u> Autofarm V2</u></span>
+      <span style={{cursor:"pointer"}} onClick={()=>{this.setState({page: "v2_vaults"})}} ><u> DABfarm V2</u></span>
         <span> | </span>
         <span style={{ fontSize:"13px", color:"grey"}} > <a target="_blank" href="https://autofarm-network.medium.com/"><u>learn more</u></a></span> 
         <span> | </span>
-        <span style={{cursor:"pointer"}} onClick={()=>{this.setState({page: "migrate"})}} ><u>migrate AUTO</u></span>
+        <span style={{cursor:"pointer"}} onClick={()=>{this.setState({page: "migrate"})}} ><u>migrate DAB</u></span>
       </div> 
     </div>
 
     let text_back_to_v1 =       <div style={{paddingTop:"8px"}}>
       <div style={{paddingTop:"0px", fontSize:"13px", color:"grey"}}  > 
-        <span style={{cursor:"pointer"}} onClick={()=>{this.setState({page: "v1_vaults"})}} ><u>Autofarm V1</u></span>
+        <span style={{cursor:"pointer"}} onClick={()=>{this.setState({page: "v1_vaults"})}} ><u>DABfarm V1</u></span>
       </div> 
     </div>
 
@@ -244,13 +233,13 @@ class App extends React.Component {
 
               {/* <div style={{paddingTop:"8px"}}>
                 <div style={{height: 0, fontSize:"13px", color:"grey"}}  > 
-                  <span>Autofarm has just upgraded to V2!</span> 
+                  <span>DABfarm has just upgraded to V2!</span> 
                 </div> 
 
                 <div style={{paddingTop:"20px", fontSize:"13px", color:"grey"}}  > 
                   <span style={{ fontSize:"13px", color:"grey"}} > <a target="_blank" href="https://autofarm-network.medium.com/"><u>learn more</u></a></span> 
                   <span> | </span>
-                  <span style={{cursor:"pointer"}} onClick={()=>{this.setState({page: "migrate"})}} ><u>migrate AUTO</u></span>
+                  <span style={{cursor:"pointer"}} onClick={()=>{this.setState({page: "migrate"})}} ><u>migrate DAB</u></span>
                 </div> 
               </div> */}
 

@@ -29,7 +29,7 @@ class BotNavBar extends Component {
                             <div style={{padding:"5px"}}> <a target="_blank" href={ "https://autofarm.network/audit_vidar_autofarm_v2.pdf" } style={{ textDecoration: "none", color: "inherit" }}> Audit </a>  </div>
                             
                             <div style={{padding:"5px"}}> <a target="_blank" href={ "https://github.com/autofarm-network/autofarmV2" } style={{ textDecoration: "none", color: "inherit" }}> Github </a>    </div>
-                            <div style={{padding:"5px"}}>  <a target="_blank" href={ constants.blockExplorerURLBase + "address/" + constants.autoFarmV2ContractAddress} style={{ textDecoration: "none", color: "inherit" }}> Contract </a> </div>
+                            <div style={{padding:"5px"}}>  <a target="_blank" href={ constants.blockExplorerURLBase + "address/" + constants.DABContractAddress} style={{ textDecoration: "none", color: "inherit" }}> Contract </a> </div>
                             <div style={{padding:"5px"}}>   <a target="_blank" href={ "https://autofarm-network.gitbook.io/autofarm-network/" } style={{ textDecoration: "none", color: "inherit" }}> Wiki </a>  </div>
                             <div style={{padding:"5px"}}>  </div>
                         
