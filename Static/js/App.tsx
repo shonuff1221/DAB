@@ -35,7 +35,7 @@ import { callBalanceOf, callTransfer } from "./helpers/web3";
 
 
 import Main from "./Main/Main";
-import logo from './Main/autofarm_icon.png'
+import logo from './Main/DABLogo2.png'
 
 import {
   IconButton,
