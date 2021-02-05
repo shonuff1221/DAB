@@ -1438,7 +1438,7 @@ contract DABFarm is Ownable, ReentrancyGuard {
     }
 
     
-    address public DAB = 0xf930533173C0B66a8863f4E6883176f09038d3a6;
+    address public DAB = 0x1dd3f989d9FD178388Ef1D67e5E84B92B517125E;
 
     address public burnAddress = 0x000000000000000000000000000000000000dEaD;
 
